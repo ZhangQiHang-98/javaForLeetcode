@@ -18,9 +18,9 @@ public class _21_MergeTwoLists {
         }
     }
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+/*    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // 非递归方法
-        /*ListNode head = new ListNode();
+        ListNode head = new ListNode();
         ListNode p1 = l1;
         ListNode p2 = l2;
         ListNode cur = head;
@@ -40,20 +40,25 @@ public class _21_MergeTwoLists {
         if (p2 != null) {
             cur.next = p2;
         }
-        return head.next;*/
+        return head.next;
+    }*/
+
+
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // 递归方法
-        // 递归终止条件,两个链表为空
-        if (l1 == null) {
+        // 1.函数的目的：返回了已经排序好的链表
+        // 2.终止条件：如果l1/l2走到头了，就返回另外一个（另外一个往后肯定是有序的）
+        // 3.等价关系：l1与l2当前比较小的一个连接其余的。
+        if(l1 == null){
             return l2;
         }
-        if (l2 == null) {
+        if(l2 ==null){
             return l1;
         }
-        else if(l1.val<l2.val){
+        if(l1.val < l2.val){
             l1.next = mergeTwoLists(l1.next, l2);
             return l1;
-        }
-        else{
+        }else {
             l2.next = mergeTwoLists(l1, l2.next);
             return l2;
         }
