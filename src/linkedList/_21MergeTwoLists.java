@@ -1,6 +1,6 @@
 package linkedList;
 
-public class _21_MergeTwoLists {
+public class _21MergeTwoLists {
     public class ListNode {
         int val;
         ListNode next;
