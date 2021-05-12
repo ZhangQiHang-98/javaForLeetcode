@@ -11,7 +11,7 @@ public class _209minSubArrayLen {
         int start = 0; // 滑动窗口起始位置
         int subLength = 0; //滑动窗口的大小
         int sum = 0;    // 滑动窗口中数的和
-        for (int j = 0; j < nums.length; j++) { // 首先需要不断地往后移动窗口的j，直到满足条件
+        for (int j = 0; j < nums.length; j++) { // 首先需要不断地往后移动窗口的结束位置，直到满足条件
             sum += nums[j];
             while (sum >= target) {  // 满足条件之后，再尝试缩小i，直到再次不满足条件位置，在此过程中要比较subLength与result
                 subLength = j - start + 1;
