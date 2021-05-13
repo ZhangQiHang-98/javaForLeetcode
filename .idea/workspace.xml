@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41e23910-1f68-4cd6-94c0-29abdab9d4a4" name="Default Changelist" comment="提交两道二分">
-      <change afterPath="$PROJECT_DIR$/problems/src/array/_76minWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/problems/src/array/_904totalFruit.java" afterDir="false" />
+    <list default="true" id="c1b816d1-6d4f-4b57-a731-b84137806551" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problems/src/hashtable/_202isHappy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problems/src/hashtable/_242isAnagram.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/problems/src/hashtable/_349intersection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/src/array/_209minSubArrayLen.java" beforeDir="false" afterPath="$PROJECT_DIR$/problems/src/array/_209minSubArrayLen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,15 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1rQpZBFpr9hLNXr347Ot77TwOT5" />
+  <component name="ProjectId" id="1sSfBCbtfKJjfycRnJxpY4Tt00Q" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -39,26 +34,23 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -67,25 +59,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="41e23910-1f68-4cd6-94c0-29abdab9d4a4" name="Default Changelist" comment="" />
-      <created>1618918220432</created>
+      <changelist id="c1b816d1-6d4f-4b57-a731-b84137806551" name="Default Changelist" comment="" />
+      <created>1620870804420</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1618918220432</updated>
-      <workItem from="1618918226411" duration="54000" />
-      <workItem from="1618978922622" duration="7173000" />
-      <workItem from="1619345851645" duration="2678000" />
-      <workItem from="1620701722704" duration="6722000" />
-      <workItem from="1620737066897" duration="18715000" />
+      <updated>1620870804420</updated>
+      <workItem from="1620870813726" duration="4339000" />
     </task>
-    <task id="LOCAL-00001" summary="提交两道二分">
-      <created>1620712708384</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1620712708384</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,10 +81,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交两道二分" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交两道二分" />
   </component>
 </project>
