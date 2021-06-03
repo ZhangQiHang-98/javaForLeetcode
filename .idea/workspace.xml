@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09812ff5-a055-441b-97de-1e55a44d6d50" name="Default Changelist" comment="5.27提交">
-      <change afterPath="$PROJECT_DIR$/problems/src/string/_151reverseWords.java" afterDir="false" />
+    <list default="true" id="6bd29be1-fe62-4628-aafd-e6cf9a71dbd8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/problems/src/string/_58offer_reverseLeftWords.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/smartfox_info.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problems/src/string/_541reverseStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/problems/src/string/_541reverseStr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problems/src/string/_151reverseWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/problems/src/string/_151reverseWords.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1t4Qm2PaoYTvB147JUgqevfnBLi" />
+  <component name="ProjectId" id="1tQQJKJCA3Dzsq6cVv09DGqTEl1" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -34,34 +38,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="09812ff5-a055-441b-97de-1e55a44d6d50" name="Default Changelist" comment="" />
-      <created>1622026041294</created>
+      <changelist id="6bd29be1-fe62-4628-aafd-e6cf9a71dbd8" name="Default Changelist" comment="" />
+      <created>1622698764837</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1622026041294</updated>
-      <workItem from="1622026048748" duration="8428000" />
-      <workItem from="1622083789129" duration="3609000" />
-      <workItem from="1622114172839" duration="705000" />
-      <workItem from="1622128802694" duration="601000" />
-      <workItem from="1622129797626" duration="510000" />
-      <workItem from="1622190447635" duration="2232000" />
-      <workItem from="1622650410758" duration="3734000" />
+      <updated>1622698764837</updated>
+      <workItem from="1622698770556" duration="1645000" />
     </task>
-    <task id="LOCAL-00001" summary="5.27提交">
-      <created>1622114857207</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1622114857207</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,10 +64,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="5.27提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="5.27提交" />
   </component>
 </project>
