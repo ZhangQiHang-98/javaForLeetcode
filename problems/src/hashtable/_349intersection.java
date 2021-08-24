@@ -17,6 +17,7 @@ public class _349intersection {
             if (record.contains(num)) {
                 unique.add(num);
             }
+
         }
 
         int[] res = new int[unique.size()];
