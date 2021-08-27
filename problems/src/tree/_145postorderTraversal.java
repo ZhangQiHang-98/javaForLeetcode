@@ -1,6 +1,7 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -24,7 +25,28 @@ public class _145postorderTraversal {
         }
     }
 
+    // 如果是迭代，后序遍历为左右中，前序为中左右
     public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        if(root == null){
+            return res;
+        }
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode curNode = stack.pop();
+            res.add(curNode.val);
+            if (curNode.left != null) {
+                stack.push(curNode.left);
+            }
+            if (curNode.right != null) {
+                stack.push(curNode.right);
+            }
+        }
+        Collections.reverse(res);
+        return res;
+    }
+/*    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
@@ -46,5 +68,5 @@ public class _145postorderTraversal {
             }
         }
         return res;
-    }
+    }*/
 }

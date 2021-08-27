@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+//中序遍历
 public class _94inorderTraversal {
     public class TreeNode {
         int val;
@@ -23,7 +24,7 @@ public class _94inorderTraversal {
             this.right = right;
         }
     }
-
+    // 递归的写法
 /*    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         helper(root, res);
@@ -39,21 +40,24 @@ public class _94inorderTraversal {
         helper(node.right, res);
     }*/
 
-    //    public List<Integer> inorderTraversal(TreeNode root) {
-//        List<Integer> res = new ArrayList<Integer>();
-//        Stack<TreeNode> stack = new Stack<TreeNode>();
-//
-//        while (root != null || !stack.isEmpty()) { // 如果同时stack为空且node为null时，说明已经遍历结束了
-//            while (root != null) {
-//                stack.push(root);
-//                root = root.left;
-//            }
-//            root = stack.pop();
-//            res.add(root.val);
-//            root = root.right;
-//        }
-//        return res;
-//    }
+    // 迭代解法（非统一）
+/*        public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            // 如果root为null了，说明已经走到当前的最左侧，访问结束
+            // 进行处理（将对应的元素放入数组之中）
+            root = stack.pop();
+            res.add(root.val);
+            root = root.right;
+        }
+        return res;
+    }*/
     //根据代码随想录得到的统一的解法
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
