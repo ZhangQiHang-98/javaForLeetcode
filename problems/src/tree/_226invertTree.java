@@ -23,6 +23,7 @@ public class _226invertTree {
         }
     }
 
+
     public TreeNode invertTree(TreeNode root) {
         // 记得加一个root为空直接返回
         if (root == null) {
@@ -47,5 +48,29 @@ public class _226invertTree {
             }
         }
         return root;
+    }
+
+    // 利用递归方法对二叉树进行反转，递归函数对当前节点的左右子树分别进行反转
+    // 前中后序在这里代表对当前节点的处理顺序，当前用的是后序，因为是先对左右进行遍历，然后再对当前进行处理。
+    //1.确定参数与返回值:参数为当前的节点，返回值也为当前节点？
+    TreeNode helper(TreeNode curNode) {
+        //2.确定终止条件：如果当前节点为空，那就
+        if (curNode != null) {
+            helper(curNode.left);
+            helper(curNode.right);
+        } else {
+            return curNode;
+        }
+        // 3.确定单层递归的逻辑
+        TreeNode temp = new TreeNode();
+        temp = curNode.left;
+        curNode.left = curNode.right;
+        curNode.right = temp;
+
+        return curNode;
+    }
+
+    public TreeNode invertTree_(TreeNode root) {
+        return helper(root);
     }
 }
