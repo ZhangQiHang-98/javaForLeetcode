@@ -3,24 +3,6 @@ package tree;
 import java.util.*;
 
 public class _100isSameTree {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     // 1.递归函数的参数与返回值:参数为两个节点的左子树、右子树，返回值为是否相等
     public boolean helper(TreeNode node1, TreeNode node2) {

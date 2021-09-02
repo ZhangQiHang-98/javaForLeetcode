@@ -5,24 +5,7 @@ import sun.reflect.generics.tree.Tree;
 import java.util.*;
 
 public class _101isSynnetruc {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     // 递归方法
     // 1.确定参数与返回值，返回值为：bool类型

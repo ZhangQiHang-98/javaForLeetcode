@@ -6,24 +6,7 @@ import java.util.Stack;
 
 // 先序遍历
 public class _144preorderTraversal {
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
 
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     // 正常递归写法
 /*    public List<Integer> preorderTraversal(TreeNode root) {
