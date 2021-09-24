@@ -23,6 +23,7 @@ public class _17letterCombinations {
             res.add(temp.toString());
             return;
         }
+        // 取当前数字对应的值
         String str = numString[digits.charAt(index) - '0'];
         for (int i = 0; i < str.length(); i++) {
             temp.append(str.charAt(i));

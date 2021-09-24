@@ -6,36 +6,34 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @Description 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。candidates 中的数字可以无限制重复被选取。
+ * @Description 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。candidates 中的每个数字在每个组合中只能使用一次。
  * @Author Zhang Qihang
- * @Date 2021/9/15 22:42
+ * @Date 2021/9/23 22:25
  */
-
-public class _39combinationSum {
-
+public class _40combinationSum2 {
     LinkedList<Integer> path = new LinkedList<>();
     List<List<Integer>> res = new ArrayList<>();
 
-    // 确定递归的参数以及返回值:返回值一般为void，参数如下,同样的，startIndex为从哪个数开始,sum为当前总和
-    void backTracing(int[] candidates, int target, int startIndex, int sum) {
+    void backTracing(int[] candidates, int target, int startIndex, int sum){
         // 回溯的终止条件：当前数字和=目标数：存，当前数字和大于目标数：返回
         if (target == sum) {
             res.add(new ArrayList<>(path));
             return;
         }
 
-        // 回溯的逻辑
-
         for (int i = startIndex; i < candidates.length && sum + candidates[i] <= target; i++) {
+            if(i>startIndex && candidates[i] == candidates[i-1]){
+                continue;
+            }
             path.add(candidates[i]);
             sum += candidates[i];
-            backTracing(candidates, target, i, sum);
+            backTracing(candidates, target, i+1, sum);
             sum -= candidates[i];
             path.removeLast();
         }
-    }
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    }
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
         backTracing(candidates, target, 0, 0);
         return res;
