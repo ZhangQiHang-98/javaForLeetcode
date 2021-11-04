@@ -55,6 +55,7 @@ public class _77combine {
             path.add(i);
             // 本层是i的话，下一层要从i+1开始进行取值。
             backTracing(n, k, i + 1);
+            // 当前迭代完成之后 往后推一位
             path.removeLast();
         }
     }
