@@ -1,8 +1,6 @@
 package backTracing;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Description 给定一个整型数组, 你的任务是找到所有该数组的递增子序列，递增子序列的长度至少是2。
@@ -15,37 +13,39 @@ public class _491findSubsequences {
     public static LinkedList<Integer> path = new LinkedList<>();
 
     // 回溯参数，常见回溯参数即可
-    public void backTracing(int[] nums, int startIndex, int flag) {
-        System.out.println(startIndex);
-        // 终止条件，如果(当前走到的值比path中的要小||走到最后)且长度>=2
-        if (path.size() >= 2 && (startIndex >= nums.length || nums[startIndex] < path.getLast())) {
-            System.out.println(path);
-            result.add(path);
+    public void backTracing(int[] nums, int startIndex) {
+        if (path.size() >= 2) {
+            result.add(new ArrayList<>(path));
+        }
+
+        // 终止条件，如果走到最后,就返回
+        if (startIndex >= nums.length) {
             return;
         }
-        if (flag == 0) {
-            //回溯逻辑
-            for (int i = startIndex; i < nums.length; i++) {
-                path.add(nums[i]);
-                backTracing(nums, i + 1, 1);
-                path.removeLast();
+        // 因为是无序的数组，且不能进行排序，所以要设置一个set进行去重
+        Set<Integer> curSet = new HashSet<>();
+        //回溯逻辑：如果重复用过，或者当前值小于path的最后一个值，就继续
+        for (int i = startIndex; i < nums.length; i++) {
+            if (curSet.contains(nums[i]) ||(path.size()>0 && nums[i] < path.getLast())) {
+                continue;
             }
-        } else {
-            path.add(nums[startIndex]);
-            backTracing(nums, startIndex + 1, 1);
+            curSet.add(nums[i]);
+            path.add(nums[i]);
+            backTracing(nums, i + 1);
             path.removeLast();
         }
 
     }
 
     public List<List<Integer>> findSubsequences(int[] nums) {
-        backTracing(nums, 0, 0);
+        backTracing(nums, 0);
         return result;
     }
 
     public static void main(String[] args) {
-        _491findSubsequences solution = new _491findSubsequences();
-        int[] nums = {4, 6, 7, 7};
-        solution.findSubsequences(nums);
+        _491findSubsequences findSubsequences = new _491findSubsequences();
+        int[] nums = {4, 4, 3, 2, 1};
+        System.out.println(findSubsequences.findSubsequences(nums));
     }
+
 }
