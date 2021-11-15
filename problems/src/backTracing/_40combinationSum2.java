@@ -14,7 +14,7 @@ public class _40combinationSum2 {
     LinkedList<Integer> path = new LinkedList<>();
     List<List<Integer>> res = new ArrayList<>();
 
-    void backTracing(int[] candidates, int target, int startIndex, int sum){
+    void backTracing(int[] candidates, int target, int startIndex, int sum) {
         // 回溯的终止条件：当前数字和=目标数：存，当前数字和大于目标数：返回
         if (target == sum) {
             res.add(new ArrayList<>(path));
@@ -22,17 +22,19 @@ public class _40combinationSum2 {
         }
 
         for (int i = startIndex; i < candidates.length && sum + candidates[i] <= target; i++) {
-            if(i>startIndex && candidates[i] == candidates[i-1]){
+            // 去重操作，必须要先排序
+            if (i > startIndex && candidates[i] == candidates[i - 1]) {
                 continue;
             }
             path.add(candidates[i]);
             sum += candidates[i];
-            backTracing(candidates, target, i+1, sum);
+            backTracing(candidates, target, i + 1, sum);
             sum -= candidates[i];
             path.removeLast();
         }
 
     }
+
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
         backTracing(candidates, target, 0, 0);

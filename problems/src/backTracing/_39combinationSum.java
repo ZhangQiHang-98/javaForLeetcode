@@ -29,6 +29,7 @@ public class _39combinationSum {
         for (int i = startIndex; i < candidates.length && sum + candidates[i] <= target; i++) {
             path.add(candidates[i]);
             sum += candidates[i];
+            // 直接传i就可以，不用传入i+1
             backTracing(candidates, target, i, sum);
             sum -= candidates[i];
             path.removeLast();
