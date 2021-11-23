@@ -22,6 +22,7 @@ public class _1005largestSumAfterKNegations {
             nums[i] = -nums[i];
             k--;
         }
+        // 改完如果还有剩，那就只操作最小的数
         if (k > 0) {
             Arrays.sort(nums);
             if (k % 2 == 1) {
