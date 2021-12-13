@@ -11,6 +11,7 @@ public class _494findTargetSumWays {
         // 首先要将问题合理的转换为0-1背包的问题，即首先要考虑，背包总量是多少，价值和重量怎么表示
         // 假设加的总和为x，那么减的总和为sum-x 那么需要满足 x-(sum-x) = target  因此 x = (target+sum)/2
         // 也就是找能正好装满x的背包有多少种方法即可
+        // 一般问方法的话，都是累加dp
         int sum = 0;
         for (int num : nums) {
             sum += num;
@@ -21,7 +22,8 @@ public class _494findTargetSumWays {
         int add = Math.abs((target + sum) / 2);
 
         //1. dp下标及其含义 dp[j]表示和为j的方法数
-        //2. 递推公式 dp[j]= dp[j]+dp[j-nums[i]]; 不用i有前面这些方法，用了i又多了一些方法
+        //2. 递推公式 dp[j]= dp[j]+dp[j-nums[i]];
+        // dp[j]表示不考虑选择i的时候的方案数，而考虑了选择i之后，又多了dp[j-nums[i]]这些选项
         //3. 初始化 dp[0] = 0
         int[] dp = new int[add + 1];
         dp[0] = 1;
