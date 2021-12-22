@@ -1,7 +1,5 @@
 package dp;
 
-import java.util.Arrays;
-
 /**
  * @className: _1035maxUncrossedLines
  * @Description: 以这种方法绘制线条，并返回我们可以绘制的最大连线数。
