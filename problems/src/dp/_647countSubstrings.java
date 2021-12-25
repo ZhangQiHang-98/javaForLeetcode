@@ -12,6 +12,7 @@ public class _647countSubstrings {
         //2. 如果s[i]!=s[j]，那么肯定不是回文串
         //   如果s[i]==s[j] a. i==j 肯定是  b. i+1==j 也是  c.else dp[i][j]=dp[i+1][j-1]
         //3. 初始化
+        //4. 根据遍历顺序应该是从左下到右上，注意j一定是大于i的
         int len = s.length();
         int result = 0;
         boolean[][] dp = new boolean[len + 1][len + 1];
