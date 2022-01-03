@@ -29,7 +29,7 @@ public class _416canPartition {
         //2. 递推公式 dp[i][j] = dp[i-1][j](不选择i，也恰好等于j) or dp[i-1][j-nums[i]](选择i，则0~i-1需要恰好等于j-nums[i]) or
         // nums[i] == j,正好只选一个nums[i]就行了
         //3. 初始化，dp[0][nums[0]]为true，其余全为false  dp[i][0]为true(一个数都不选，那么和就恰好为0)
-        boolean[][] dp = new boolean[nums.length][target + 1];
+        boolean[][] dp = new boolean[nums.length + 1][target + 1];
         for (int i = 0; i < nums.length; i++) {
             dp[i][0] = true;
         }

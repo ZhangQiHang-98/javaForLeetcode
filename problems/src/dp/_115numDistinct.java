@@ -23,7 +23,7 @@ public class _115numDistinct {
         for (int i = 1; i < s.length(); i++) {
             for (int j = 1; j < t.length(); j++) {
                 if (s.charAt(i - 1) == t.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
+                    dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j]; //前者为选，后者为不选
                 } else {
                     dp[i][j] = dp[i-1][j];
                 }
