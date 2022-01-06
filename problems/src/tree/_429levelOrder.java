@@ -32,7 +32,7 @@ public class _429levelOrder {
         queue.add(root);
         while (!queue.isEmpty()) {
             List<Integer> temp = new ArrayList<>();
-            //首先计算当前队列中的大小，也就是当前层节点个数
+            //首先计算当前队列中的大小，也就是当前层节点个数，注意的是，这里需要使用固定Size，因为queue.size是一直变的
             int layerSize = queue.size();
             // 依次对当前层节点执行队列弹出->进入temp数组->队列弹入children的操作
             for (int i = 0; i < layerSize; i++) {
