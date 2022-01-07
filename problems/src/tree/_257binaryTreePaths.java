@@ -14,6 +14,7 @@ public class _257binaryTreePaths {
 
     public void helper(TreeNode root, String path, List<String> paths) {
         if (root != null) {
+            // 新建了一个path防止分支污染
             StringBuffer pathSB = new StringBuffer(path);
             pathSB.append(root.val);
             // 如果是叶子节点
