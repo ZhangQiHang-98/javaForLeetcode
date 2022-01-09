@@ -1,7 +1,6 @@
 package tree;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -10,34 +9,34 @@ import java.util.List;
  * @Date 2022/1/7 22:08
  */
 public class _113pathSum {
-    public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        List<List<Integer>> result = new ArrayList<>();
-        dfs(root, sum, new ArrayList<>(), result);
-        return result;
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        if(root==null){
+            return res;
+        }
+        dfs(root, targetSum, path, res);
+        return res;
     }
 
-    public void dfs(TreeNode root, int sum, List<Integer> list,
-                    List<List<Integer>> result) {
-        //如果节点为空直接返回
-        if (root == null)
-            return;
-        //因为list是引用传递，为了防止递归的时候分支污染，我们要在每个路径
-        //中都要新建一个subList
-        List<Integer> subList = new ArrayList<>(list);
-        //把当前节点值加入到subList中
-        subList.add(new Integer(root.val));
-        //如果到达叶子节点，就不能往下走了，直接return
+    public void dfs(TreeNode root, int targetSum, List<Integer> path, List<List<Integer>> res) {
+        path.add(root.val);
+        // 如果遇到了叶子节点
         if (root.left == null && root.right == null) {
-            //如果到达叶子节点，并且sum等于叶子节点的值，说明我们找到了一组，
-            //要把它放到result中
-            if (sum == root.val)
-                result.add(subList);
-            //到叶子节点之后直接返回，因为在往下就走不动了
+            if (targetSum - root.val == 0) {
+                res.add(new ArrayList<>(path));
+            }
             return;
         }
-        //如果没到达叶子节点，就继续从他的左右两个子节点往下找，注意到
-        //下一步的时候，sum值要减去当前节点的值
-        dfs(root.left, sum - root.val, subList, result);
-        dfs(root.right, sum - root.val, subList, result);
+
+        if (root.left != null) {
+            dfs(root.left, targetSum - root.val, path, res);
+            path.remove(path.size() - 1); // 回溯
+        }
+        if (root.right != null) {
+            dfs(root.right, targetSum - root.val, path, res);
+            path.remove(path.size() - 1); // 回溯
+        }
     }
 }
