@@ -8,15 +8,22 @@ package tree;
  */
 public class _700searchBST {
     public TreeNode searchBST(TreeNode root, int val) {
-        if (root == null) {
-            return null;
-        } else if (root.val == val) {
+        if (root == null || root.val == val) {
             return root;
         } else if (root.val < val) {
             root = searchBST(root.right, val);
         } else if (root.val > val) {
             root = searchBST(root.left, val);
         }
+        return root;
+    }
+
+    // 迭代方法
+    public TreeNode _searchBST(TreeNode root, int val) {
+        while (root != null)
+            if (val < root.val) root = root.left;
+            else if (val > root.val) root = root.right;
+            else return root;
         return root;
     }
 }
