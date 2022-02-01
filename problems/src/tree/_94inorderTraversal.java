@@ -23,22 +23,24 @@ public class _94inorderTraversal {
     }*/
 
     // 迭代解法（非统一）
-/*        public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
-        Stack<TreeNode> stack = new Stack<TreeNode>();
-
+/*
+    // 利用栈，但是入栈的时候只能是先处理当前节点（先序的顺序），但是这里要先处理左节点，所以要做特殊处理
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
         while (root != null || !stack.isEmpty()) {
-            while (root != null) {
+            if (root != null) {
                 stack.push(root);
                 root = root.left;
+            } else {
+                // 当前节点为空，说明左边走到头了，当前栈存的是最左侧的值
+                TreeNode temp = stack.pop();
+                res.add(temp.val);
+                root = temp.right;
             }
-            // 如果root为null了，说明已经走到当前的最左侧，访问结束
-            // 进行处理（将对应的元素放入数组之中）
-            root = stack.pop();
-            res.add(root.val);
-            root = root.right;
         }
         return res;
+    }
+
     }*/
     //根据代码随想录得到的统一的解法
     public List<Integer> inorderTraversal(TreeNode root) {

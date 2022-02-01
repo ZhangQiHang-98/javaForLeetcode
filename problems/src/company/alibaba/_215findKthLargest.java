@@ -35,7 +35,7 @@ public class _215findKthLargest {
     // 通用的写法，可以记忆一下模板
     private int partition(int[] nums, int left, int right, int pivotIndex) {
         int pivot = nums[pivotIndex];
-        // move pivot to end
+        // move pivot to end,先移动到最后面去
         swap(nums, right, pivotIndex);
         int pos = left;
         for (int i = left; i <= right; i++) {
@@ -44,7 +44,7 @@ public class _215findKthLargest {
                 swap(nums, pos++, i);
             }
         }
-        // move pivot to original place
+        // move pivot to original place，记得最后再交换回来
         swap(nums, right, pos);
         return pos;
     }
