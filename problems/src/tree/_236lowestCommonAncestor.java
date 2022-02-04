@@ -13,8 +13,9 @@ public class _236lowestCommonAncestor {
     // 如果找到一个节点，发现左子树出现结点p，右子树出现节点q，
     // 或者 左子树出现结点q，右子树出现节点p，那么该节点就是节点p和q的最近公共祖先
 
-    // 定义fx表示x的子树中是否包含p或者q f_lson表示左子树是否包含
+    // 定义fx表示x的子树中是否包含p或者q
     // 如果节点x是最近公共祖先，那么他一定满足以下条件：
+    // 第一项是左有一个，右有一个  第二项是左右有一个 本身是一个
     // (f_lson && f_rson)|| ( (x=p）|| (x=q)) && (f_lson || f_rson))
     // 最近的特性是通过后序遍历，自底向上访问保证的，最近的一定是鲜卑访问都的
 
@@ -34,7 +35,7 @@ public class _236lowestCommonAncestor {
             res = root;
         }
 
-        // 当前层对于f_son的判断
+        // 当前层对于f_son的判断（单层逻辑）
         return f_lson || f_rson || root.val == q.val || root.val == p.val;
     }
 
@@ -42,5 +43,23 @@ public class _236lowestCommonAncestor {
         res = null;
         helper(root, p, q);
         return res;
+    }
+
+    public TreeNode _lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // 递归终止条件
+        // 比如在某一棵子树上先找到了p，则无需继续遍历这棵子树，因为即使这棵子树有q，p也一定是q的祖先，也就是它们两个的最近公共祖先。
+        // 这里先找到谁，说明谁在上边
+        if (root == null || root == q || root == p) {
+            return root;
+        }
+        // 后序遍历
+        TreeNode left = _lowestCommonAncestor(root.left, p, q);
+        TreeNode right = _lowestCommonAncestor(root.right, p, q);
+        // 如果左右子树都找到了（一个在左一个在右）
+        if (left != null && right != null) {
+            return root;
+        }
+        //一边找到了，一边没找到，根据上述规则，找到的就是最近公共祖先。
+        return left == null ? right : left;
     }
 }

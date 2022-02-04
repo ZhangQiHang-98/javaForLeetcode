@@ -62,4 +62,5 @@ public class _42trap {
         }
         return sum;
     }
+
 }
