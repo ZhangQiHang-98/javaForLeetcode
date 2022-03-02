@@ -1,5 +1,4 @@
 package company.alibaba;
-
 import java.util.Random;
 
 /**
@@ -25,7 +24,6 @@ public class _912sortArray {
             quickSort(nums, pos + 1, r);
         }
     }
-
     public int partition(int[] nums, int l, int r) {
         // 随机选择一个元素，因为是右开区间，所以+1
         int index = new Random().nextInt(r - l + 1) + l;

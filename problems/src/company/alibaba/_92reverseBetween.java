@@ -57,7 +57,7 @@ public class _92reverseBetween {
         }
         // cur永远指向待反转区域的第一个节点
         // next永远指向cur的后一个节点
-        // 当前要处理那个元素
+        // 永远是要处理cur后面那个元素~
         ListNode cur = pre.next;
         ListNode next;
         for (int i = left; i < right; i++) {

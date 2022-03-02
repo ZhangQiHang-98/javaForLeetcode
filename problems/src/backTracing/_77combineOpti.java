@@ -21,7 +21,7 @@ public class _77combineOpti {
             res.add(new ArrayList<>(path));
             return;
         }
-
+        Math.max(0,1);
         // 确定单层搜索（递归）的逻辑  (横向遍历,根据集合的大小)
         // 如果for循环的起始位置之后的个数已经不足元素个数了就不要了
         for (int i = startIndex; i <= n - (k - path.size()) + 1; i++) {
@@ -36,6 +36,13 @@ public class _77combineOpti {
     public List<List<Integer>> combine(int n, int k) {
         // startIndex从1开始
         backTracing(n, k, 1);
+        for(List<Integer> list:res){
+            // 遍历输出list
+            for(int i =0;i<list.size();i++){
+                System.out.print(list.get(i)+" ");
+            }
+            System.out.println();
+        }
         return res;
     }
 }

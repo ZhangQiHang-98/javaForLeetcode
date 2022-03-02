@@ -9,28 +9,21 @@ import java.util.Map;
  * @Date 2022/1/29 17:41
  */
 public class _3lengthOfLongestSubstring {
-    public static int lengthOfLongestSubstring(String s) {
-        if (s.length() == 0) {
-            return 0;
-        }
-        // 做题的时候一定要先想清楚透彻
-        // 使用滑动窗口进行解决 同时利用哈希表
-        // r 指针不停向右移动，l 指针仅仅在窗口满足条件之后才会移动，起到窗口收缩的效果
-        Map<Character, Integer> map = new HashMap<>();
+    public int lengthOfLongestSubstring(String s) {
+        if (s.length()==0) return 0;
+        // 先明确hashmap的定义，存放的是位置，并不是个数
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        int max = 0;
         int left = 0;
-        int result = 0;
-        // 遍历快指针
-        for (int right = 0; right < s.length(); right++) {
-            if (map.containsKey(s.charAt(right))) {
-                left = Math.max(left, map.get(s.charAt(right)) + 1);
+        for(int i = 0; i < s.length(); i ++){
+            if(map.containsKey(s.charAt(i))){
+                left = Math.max(left,map.get(s.charAt(i)) + 1);
             }
-            // 存的是第一次遇到这个字符串时候的位置，所以要先考虑清楚哈希表中应该存放什么
-            map.put(s.charAt(right), right);
+            map.put(s.charAt(i),i);
+            max = Math.max(max,i-left+1);
         }
-        return result;
+        return max;
+
     }
 
-    public static void main(String[] args) {
-        lengthOfLongestSubstring("dvdf");
-    }
 }
