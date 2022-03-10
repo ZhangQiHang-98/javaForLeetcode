@@ -27,7 +27,7 @@ public class _160getIntersectionNode {
             pA = pA == null ? headB : pA.next;
             pB = pB == null ? headA : pB.next;
         }
-        // 如果有相交，两指针都走了a+b-c的路程，如果没有公共列表也是都走到了null
+        // 如果有相交，两指针都走了a+b-c的路程，如果没有公共列表也是都走到了null 
         return pA;
     }
 

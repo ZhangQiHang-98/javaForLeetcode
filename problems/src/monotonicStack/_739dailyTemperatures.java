@@ -33,12 +33,6 @@ public class _739dailyTemperatures {
                 // 把当前的值放到正确的位置
                 stack.push(i);
             }
-            // 一步到位的写法，只有当栈里有元素且当前元素大于栈中的元素，才弹出且记录，否则压入即可
-/*            while (!stack.empty() && temperatures[i] > temperatures[stack.peek()]){
-                waitDays[stack.peek()] = i - stack.peek();
-                stack.pop();
-            }
-            stack.push(i);*/
         }
         return waitDays;
     }

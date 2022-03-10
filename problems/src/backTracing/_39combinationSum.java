@@ -22,7 +22,7 @@ public class _39combinationSum {
         if (target == sum) {
             res.add(new ArrayList<>(path));
             return;
-        }
+        } 
 
         // 回溯的逻辑
 
