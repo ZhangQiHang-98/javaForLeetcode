@@ -42,3 +42,4 @@ public class threeThread {
         new Thread(() -> threeThread.printABC(0), "线程A").start();
     }
 }
+
