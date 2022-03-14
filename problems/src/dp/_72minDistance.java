@@ -9,7 +9,7 @@ public class _72minDistance {
     public int minDistance(String word1, String word2) {
         //1. dp[i][j] 表示以下标i-1为结尾的字符串word1，和以下标j-1为结尾的字符串word2，最近编辑距离为dp[i][j]。
         //2. 如果word1[i-1] == word2[j-1] 那么dp[i][j] = dp[i-1][j-1]，否则进行增删改操作
-        //   删除：word1删掉一个元素 那dp[i][j]=dp[i-1][j]+1。word2删掉一个元素 那dp[i][j]=dp[i][j-1]
+        //   删除：word1删掉一个元素 那dp[i][j]=dp[i-1][j]+1。word2删掉一个元素 那dp[i][j]=dp[i][j-1] + 1
         //   增加：删除与增加时等价的 例如 A doge B dog 既可以A删除e，又可以B增加e
         //   替换: 将当前替换成一样的，相当于在相等的基础上多操作了一步 dp[i][j] = dp[i-1][j-1]+1
         //3. 初始化 dp[0][j]与dp[i][0]分别为j和0，表示空字符串和长度为i(j)的字符串的情况

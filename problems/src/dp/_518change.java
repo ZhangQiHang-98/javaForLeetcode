@@ -15,16 +15,9 @@ public class _518change {
         //3. 初始化 只有当不选取任何硬币时，金额之和才为 0，因此只有1种硬币组合。
         int[] dp = new int[amount + 1];
         dp[0] = 1;
-        // for (int i = 0; i < coins.length; i++) {
-        //     for (int j = coins[i]; j <= amount; j++) {
-        //         dp[j] += dp[j - coins[i]];
-        //     }
-        //     System.out.println(Arrays.toString(dp));
-        // }
-        for (int j = 0; j <= amount; j++) { // 遍历背包容量
-            System.out.println(j);
-            for (int i = 0; i < coins.length; i++) { // 遍历物品
-                if (j - coins[i] >= 0) dp[j] += dp[j - coins[i]];
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = coins[i]; j <= amount; j++) {
+                dp[j] += dp[j - coins[i]];
             }
             System.out.println(Arrays.toString(dp));
         }

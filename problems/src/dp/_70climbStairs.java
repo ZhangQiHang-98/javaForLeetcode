@@ -7,7 +7,7 @@ package dp;
  */
 public class _70climbStairs {
     public int climbStairs(int n) {
-        if(n<=2){
+        if (n <= 2) {
             return n;
         }
         //1. 明确dp数组与下标的含义  dp[i]表示有多少种方法可以到达位置i处

@@ -1,5 +1,7 @@
 package dp;
 
+import java.util.Arrays;
+
 /**
  * @className: _300lengthOfLIS
  * @Description: 给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
@@ -22,9 +24,8 @@ public class _300lengthOfLIS {
         //3. dp[0]=1
         int[] dp = new int[n];
         int result = 0;
-        dp[0] = 1;
+        Arrays.fill(dp, 1);
         for (int i = 1; i < n; i++) {
-            dp[i] = 1;
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     dp[i] = Math.max(dp[i], dp[j] + 1);

@@ -1,5 +1,8 @@
 package someExample;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  * @Description 按顺序执行三个线程
  * @Author Zhang Qihang
@@ -28,6 +31,8 @@ public class threeThread {
             System.out.println(Thread.currentThread().getName());
             lock.notifyAll();
         }
+
+        Collections.synchronizedList(new ArrayList<>());
     }
 
     public static void main(String[] args) {

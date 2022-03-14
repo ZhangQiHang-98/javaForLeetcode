@@ -10,25 +10,17 @@ package tree;
 public class _617mergeTrees {
     // 构造树，上边用不到下面，所以先序遍历，先处理当前节点
     public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
-        TreeNode node = new TreeNode();
-        // 如果两个节点都走到了空节点，就返回
-        if (root1 == null && root2 == null) {
-            return null;
-        } else if (root1 == null && root2 != null) {
-            // 如果一个为空，一个不为空，填为有的那个值
-            node.val = root2.val;
-            node.left = mergeTrees(null, root2.left);
-            node.right = mergeTrees(null, root2.right);
-        } else if (root1 != null && root2 == null) {
-            node.val = root1.val;
-            node.left = mergeTrees(root1.left, null);
-            node.right = mergeTrees(root1.right, null);
-        } else {
-            // 如果当前都不为空
-            node.val = (root1.val + root2.val);
-            node.left = mergeTrees(root1.left, root2.left);
-            node.right = mergeTrees(root1.right, root2.right);
+        if(root1 == null){
+            return root2;
         }
+        if(root2 == null){
+            return root1;
+        }
+        //都不为空的情况
+        TreeNode node = new TreeNode(root1.val + root2.val);
+        node.left = mergeTrees(node.left,node.right);
+        node.right = mergeTrees(node.right, node.right);
+
         return node;
     }
 }

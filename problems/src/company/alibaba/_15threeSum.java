@@ -13,43 +13,29 @@ public class _15threeSum {
 
     //使用双指针方法，能够让复杂度降到O(n2)，记得先排序
     public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(nums);
-        int len = nums.length;
-
-        for (int i = 0; i < nums.length; i++) {
-            // 可能产生重复解，单独处理
-            if (i > 0 && nums[i - 1] == nums[i]) {
-                continue;
-            }
-            // 从第一个元素开始找
-            int remian = -nums[i];
-            int left = i + 1;
-            int right = len - 1;
+        List<List<Integer>> ans = new ArrayList<>();
+        if (nums == null || nums.length <= 2) return ans;
+        Arrays.sort(nums); // O(nlogn)
+        for (int i = 0; i < nums.length - 2; i++) { // O(n^2)
+            if (nums[i] > 0) break; // 第一个数大于 0，后面的数都比它大，肯定不成立了
+            if (i > 0 && nums[i] == nums[i - 1]) continue; // 去掉重复情况
+            int target = -nums[i];
+            int left = i + 1, right = nums.length - 1;
             while (left < right) {
-                // 如果找到了合适的解
-                if (nums[left] + nums[right] == remian) {
-                    res.add(Arrays.asList(nums[i], nums[left], nums[right]));
-                    // 如果下一个数和当前数一样，也会产生重复解
-                    while (left < right && nums[left] == nums[left + 1]) {
-                        left++;
-                    }
-                    while (left < right && nums[right] == nums[right - 1]) {
-                        right--;
-                    }
-                    // 此时到了最后一个重复的地方，然后再++--操作
+                if (nums[left] + nums[right] == target) {
+                    ans.add(new ArrayList<>(Arrays.asList(nums[i], nums[left], nums[right])));
+                    // 现在要增加 left，减小 right，但是不能重复，比如: [-2, -1, -1, -1, 3, 3, 3], i = 0, left = 1, right = 6, [-2, -1, 3] 的答案加入后，需要排除重复的 -1 和 3
+                    while (right > left && nums[right] == nums[right - 1]) right--;
+                    while (right > left && nums[left] == nums[left + 1]) left++;
+                    left++; right--;
+                } else if (nums[left] + nums[right] < target) {
                     left++;
-                    right--;
-                } else if (nums[left] + nums[right] < remian) {
-                    left++;
-                } else {
+                } else {  // nums[left] + nums[right] > target
                     right--;
                 }
             }
-
         }
-        // 一种方法可以得到结果再去重，另一种方法则是在过程中进行去重。
-        return res;
+        return ans;
     }
 
 }
