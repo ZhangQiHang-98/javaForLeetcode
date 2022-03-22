@@ -13,6 +13,7 @@ public class _124maxPathSum {
         return res;
     }
 
+    // 返回的是以当前节点为路径为结尾（起点）的最大路径
     public int helper(TreeNode root) {
         if (root == null) {
             return 0;
@@ -21,7 +22,9 @@ public class _124maxPathSum {
         //计算左子树的最大值，必须要比0大
         int leftMax = Math.max(helper(root.left), 0);
         int rightMax = Math.max(helper(root.right), 0);
+        // 记录最大res
         res = Math.max(res, root.val + leftMax + rightMax);
+
         return Math.max(leftMax, rightMax) + root.val;
     }
 }
